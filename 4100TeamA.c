@@ -83,7 +83,7 @@ task autonomous()
 
 	// Keep driving at 127 for 1 second
 	// TODO: Need to measure how long it takes to reach 23.75 inches
-	wait1Msec(925);
+	wait1Msec(950);
 
 	// Stop the Robot
 	motor[leftMotor] = 0;
@@ -93,8 +93,9 @@ task autonomous()
 	motor[pickup] = 127;
 	motor[track] = 127;
 	motor[shooter] = 127;
-
-	wait1Msec(5000);
+	
+	// Wait 10 seconds
+	wait1Msec(10000);
 
 	// Reset
 	motor[pickup] = 0;
