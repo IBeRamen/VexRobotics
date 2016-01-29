@@ -98,6 +98,8 @@ task autonomous()
 	
 	// Reset
 	motor[pickup] = 0;
+	motor[track] = 0;
+	motor[shooter] = 0;
 
 }
 
@@ -122,31 +124,44 @@ task usercontrol()
 		motor[rightMotor] = vexRT[Ch2];
 		
 		// Ball pickup
+		// If Button 6U is pressed turn on motor[pickup]
+		// Brings the ball(s) inside the robot to the tracks
 		if (vexRT[Btn6U] == 1) {
 			motor[pickup] = -127;
 		}
+		// If Button 6U isn't pressed but Button 6D turn on motor[pickup]
+		// Pushes the ball(s) out of the robot (In case they get stuck)
 		else if (vexRT[Btn6D] == 1) {
 			motor[pickup] = 127;
 		}
+		// If everything else is false, turn off motor[pickup]
 		else {
 			motor[pickup] = 0;	
 		}
 		
 		// Track
+		// If Button 5U is pressed turn on motor[track] to 127
+		// Brings the ball(s) up to the shooter
 		if (vexRT[Btn5U] == 1) {
 			motor[track] = 127;	
 		}
+		// If Button 5U isn't pressed but Button 5D is pressed turn on motor[track] to -127
+		// In case a ball(s) gets stuck it will reverse the tracks
 		else if (vexRT[Btn5D] == 1) {
 			motor[track] = -127;	
 		}
+		// If everything else is false, turn off motor[track]
 		else {
 			motor[track] = 0;
 		}
 		
 		// Shooter
+		// If Button 8D is pressed turn on motor[shooter]
+		// Shoots the ball(s) to the net
 		if (vexRT[Btn8D] == 1) {
 			motor[shooter] = 127;
 		}
+		// If Button 8D isn't pressed turn off motor[shooter]
 		else {
 			motor[shooter] = 0;
 		}
