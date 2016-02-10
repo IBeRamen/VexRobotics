@@ -13,16 +13,16 @@ task main() {
 		motor[backLeft] = vexRT[Ch3];
 
 		if (vexRT[Btn5U] == 1) {
-			motor[frontLeft] = 127;
-			motor[backRight] = 127;
-			motor[frontRight] = -127;
-			motor[backLeft] = -127;
-		}
-		else if (vexRT[Btn6U] == 1) {
 			motor[frontLeft] = -127;
 			motor[backRight] = -127;
 			motor[frontRight] = 127;
 			motor[backLeft] = 127;
+		}
+		else if (vexRT[Btn6U] == 1) {
+			motor[frontLeft] = 127;
+			motor[backRight] = 127;
+			motor[frontRight] = -127;
+			motor[backLeft] = -127;
 		}
 		else {
 			motor[frontLeft] = 0;
