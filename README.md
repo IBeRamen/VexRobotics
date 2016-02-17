@@ -11,10 +11,10 @@ Location: Orlando, Florida.
   * Used to debug the controller. View joystick, button and trigger values.
 * 4100TeamA.c
   * The code used for the Vex Robotics competition 2015 - 2016.
-* MecanumDrive.c
+* M2.c
   * Code used to control Mecanum Wheels. (See picture below)
 
 # Pictures
 
-## Mecanum Drive
-![alt tag](https://goo.gl/urU7qt)
+## Mecanum Drive (M2)
+![alt tag](https://goo.gl/VXUWMq)
